@@ -1,0 +1,28 @@
+{
+    "name": "wwpass/wwpass-api-php",
+    "description": "A PHP implementation of the WWPass API.",
+    "homepage": "https://wwpass.com/",
+    "license": "Apache-2.0",
+    "support": {
+        "email": "support@wwpass.com"
+    },
+    "authors":[
+      {
+        "name": "Rostislav Kondratenko",
+        "email": "r.kondratenko@wwpass.com",
+      },
+      {
+        "name": "Vladimir Korshunov",
+        "email": "v.korshunov@wwpass.com",
+      }
+    ],
+    "autoload": {
+        "psr-4": {
+            "WWPASS\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.6",
+        "ext-curl": "*"
+    }
+}

@@ -4,10 +4,10 @@
  *
  * WWPass Client Library, object style interface (php5 only) Version 3.0
  *
+ * @author    Rostislav Kondratenko <r.kondratenko@wwpass.com>
+ * @author    Vladimir Korshunov <v.korshunov@wwpass.com>
  * @copyright (c) WWPass Corporation, 2009-2016
- * @author Rostislav Kondratenko <r.kondratenko@wwpass.com>
- * @author Vladimir Korshunov <v.korshunov@wwpass.com>
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -21,9 +21,9 @@
  * limitations under the License.
  *
  */
-class WWPassException extends Exception {
-}
-final class WWPassConnection {
+namespace WWPass;
+
+final class Connection {
     private $key_file;
     private $cert_file;
     private $ca_file;
@@ -52,25 +52,25 @@ final class WWPassConnection {
     private function makeRequest($method, $command, array $data, $attempts = 3) {
         $command_url = $this->spfe_addr . '/' . $command . '.json';
         $curl_options = array(
-			CURLOPT_HEADER => false,
-			CURLOPT_RETURNTRANSFER => true,
-			CURLOPT_SSL_VERIFYPEER => true,
-			CURLOPT_SSL_VERIFYHOST => 2,
-			CURLOPT_TIMEOUT => $this->timeout,
-			CURLOPT_SSLCERT => $this->cert_file,
-			CURLOPT_SSLKEY => $this->key_file,
-			CURLOPT_CAINFO => $this->ca_file,
-			CURLOPT_USERAGENT => 'WWPass SDK for PHP',
-			CURLOPT_VERBOSE => True);
+            CURLOPT_HEADER => false,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_SSL_VERIFYPEER => true,
+            CURLOPT_SSL_VERIFYHOST => 2,
+            CURLOPT_TIMEOUT => $this->timeout,
+            CURLOPT_SSLCERT => $this->cert_file,
+            CURLOPT_SSLKEY => $this->key_file,
+            CURLOPT_CAINFO => $this->ca_file,
+            CURLOPT_USERAGENT => 'WWPass SDK for PHP',
+            CURLOPT_VERBOSE => true);
         switch (strtolower($method)) {
             case 'get':
                 $curl_options[CURLOPT_HTTPGET] = true;
                 $command_url.= '?' . $this->makeGetParamsString($data);
-            break;
+                break;
             case 'post':
                 $curl_options[CURLOPT_POST] = true;
                 $curl_options[CURLOPT_POSTFIELDS] = $this->makeGetParamsString($data);
-            break;
+                break;
         }
         $curl_options[CURLOPT_URL] = $command_url;
         $ch = curl_init();
@@ -84,17 +84,17 @@ final class WWPassConnection {
         }
         $err = curl_error($ch);
         curl_close($ch);
-        if (!$res) throw new WWPASSException('Cannot communicate to SPFE: ' . $err);
+        if (!$res) throw new Exception('Cannot communicate to SPFE: ' . $err);
         $result = json_decode($res);
         if ($result->encoding == 'base64') $result->data = base64_decode($result->data);
-        if (!$result->result) throw new WWPASSException('SPFE returned error: ' . $result->data);
+        if (!$result->result) throw new Exception('SPFE returned error: ' . $result->data);
         return $result->data;
     }
 
     public function getName() {
         $ticket = $this->getTicket(0);
         $pos = strpos($ticket, ":");
-        if ($pos === false) throw new WWPASSException('SPFE returned ticket without a colon.');
+        if ($pos === false) throw new Exception('SPFE returned ticket without a colon.');
         return substr($ticket, 0, $pos);
     }
 
