@@ -1,6 +1,5 @@
 # WWPass PHP SDK
 
-
 The WWPass Web Application SDK for PHP comprises documentation and a library,  that is installed on a Service Provider’s system to allow authentication using the WWPass system. The WWPass Authentication Service is an alternative to, or replacement for, other authentication methods such as user name/password.
 
 ### Prerequisites

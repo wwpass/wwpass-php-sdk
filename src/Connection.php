@@ -2,7 +2,7 @@
 /**
  * wwpass.php
  *
- * WWPass Client Library, object style interface (php5+ only) Version 4.0
+ * WWPass Client Library, object style interface (php5+ only) Version 4.0.1
  *
  * @copyright (c) WWPass Corporation, 2009-2019
  * @author    Rostislav Kondratenko <r.kondratenko@wwpass.com>
