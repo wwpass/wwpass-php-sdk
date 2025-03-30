@@ -1,0 +1,31 @@
+{
+    "name": "wwpass/apiclient",
+    "description": "A PHP implementation of the WWPass API",
+    "homepage": "https://wwpass.com/",
+    "license": "Apache-2.0",
+    "support": {
+        "email": "support@wwpass.com"
+    },
+    "authors":[
+      {
+        "name": "Rostislav Kondratenko",
+        "email": "r.kondratenko@wwpass.com"
+      },
+      {
+        "name": "Vladimir Korshunov",
+        "email": "v.korshunov@wwpass.com"
+      },
+      {
+        "name": "Ekaterina Moskovkina",
+        "email": "e.moskovkina@wwpass.com"
+      }
+    ],
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "WWPass\\": "src/"
+        }
+    }
+}

@@ -1,0 +1,16 @@
+# Operating system or editor-specific files
+.DS_Store
+
+# IDE directories and settings
+.vscode/
+
+# Environment variables
+/.env
+ 
+# Composer dependencies
+/vendor/
+
+*.phar
+*.deb
+*.ca
+config.php
