@@ -30,7 +30,7 @@ final class Connection
     private $_ca_file;
     private $_timeout;
     private $_spfe_addr;
-    const VERSION = '4.0';
+    const VERSION = '4.0.1';
 
     public function __construct(array $args)
     {
