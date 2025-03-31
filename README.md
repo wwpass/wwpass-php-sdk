@@ -126,3 +126,4 @@ try {
 ## License
 
 The WWPass PHP library is licensed under Apache 2.0 license
+v4.0.1
