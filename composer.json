@@ -8,16 +8,8 @@
     },
     "authors":[
       {
-        "name": "Rostislav Kondratenko",
-        "email": "r.kondratenko@wwpass.com"
-      },
-      {
-        "name": "Vladimir Korshunov",
-        "email": "v.korshunov@wwpass.com"
-      },
-      {
-        "name": "Ekaterina Moskovkina",
-        "email": "e.moskovkina@wwpass.com"
+        "name": "WWPass Corporation, 2009-2025",
+        "email": "info@wwpass.com"
       }
     ],
     "require": {

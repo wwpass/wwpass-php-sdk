@@ -2,12 +2,9 @@
 /**
  * wwpass.php
  *
- * WWPass Client Library, object style interface (php5+ only) Version 4.0.1
+ * WWPass Client Library, object style interface (php5+ only) Version 4.0.2
  *
- * @copyright (c) WWPass Corporation, 2009-2019
- * @author    Rostislav Kondratenko <r.kondratenko@wwpass.com>
- * @author    Vladimir Korshunov <v.korshunov@wwpass.com>
- * @author    Ekaterina Moskovkina <e.moskovkina@wwpass.com>
+ * @copyright (c) WWPass Corporation, 2009-2025
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +27,7 @@ final class Connection
     private $_ca_file;
     private $_timeout;
     private $_spfe_addr;
-    const VERSION = '4.0.1';
+    const VERSION = '4.0.2';
 
     public function __construct(array $args)
     {
